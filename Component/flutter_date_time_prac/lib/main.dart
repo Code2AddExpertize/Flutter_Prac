@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Date:${time.weekday} ${time.day}-${time.month}-${time.year}\n Time:${time.hour}:${time.minute}',
+              'Date:${time.day}-${time.month}-${time.year}\n Time:${time.hour}:${time.minute}',
               style: TextStyle(fontSize: 25),
             ),
             ElevatedButton(
