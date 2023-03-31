@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +50,31 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Date:${time.day}-${time.month}-${time.year}\n Time:${time.hour}:${time.minute}',
+              'Date:\n${time.day}-${time.month}-${time.year} ${time.hour}:${time.minute}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('Hms').format(time)}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('jms').format(time)}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('yMMMMd').format(time)}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('QQQQ').format(time)}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('EEEE').format(time)}',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Formatted Date->\n${DateFormat('MMMM').format(time)}',
               style: TextStyle(fontSize: 25),
             ),
             ElevatedButton(
