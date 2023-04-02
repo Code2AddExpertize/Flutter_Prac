@@ -30,6 +30,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  var arrColors = [
+    Colors.blueAccent,
+    Colors.grey,
+    Colors.purple,
+    Colors.deepOrange,
+    Colors.brown,
+    Colors.amber,
+    Colors.tealAccent,
+    Colors.teal,
+  ];
 
   void _incrementCounter() {
     setState(() {
@@ -43,128 +53,152 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: GridView.count(
-        crossAxisCount: 3,
-        crossAxisSpacing: 11,
-        mainAxisSpacing: 11,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.amber,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.pink,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.brown,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.teal,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.amber,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.pink,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.brown,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.teal,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              color: Colors.deepOrange,
-            ),
-          ),
-          Container(
-            height: 100,
-          ),
-          GridView.extent(
-            maxCrossAxisExtent: 50,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.amber,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.pink,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.brown,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.teal,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.amber,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.pink,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.brown,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.teal,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.deepOrange,
-                ),
-              ),
-            ],
-          )
-        ],
+      body:
+          // GridView.count(
+          //   crossAxisCount: 3,
+          //   crossAxisSpacing: 11,
+          //   mainAxisSpacing: 11,
+          //   children: [
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.amber,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.pink,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.brown,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.teal,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.amber,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.pink,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.brown,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.teal,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.deepOrange,
+          //       ),
+          //     ),
+          //     Container(
+          //       height: 100,
+          //     ),
+
+          //GridView Extent
+          // GridView.extent(
+          //   maxCrossAxisExtent: 150,
+          //   children: [
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.amber,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.pink,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.brown,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.teal,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.amber,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.pink,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.brown,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.teal,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: const EdgeInsets.all(8.0),
+          //       child: Container(
+          //         color: Colors.deepOrange,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+
+          //SliverGridDelegateWithFixedCrossAxisCount
+          // GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //   crossAxisCount: 3,
+          //   crossAxisSpacing: 11,
+          //   mainAxisSpacing: 11,
+          // ), itemBuilder: (context,index){
+          //     return Container(color: arrColors[index],);
+          // },itemCount: arrColors.length,),
+          GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          mainAxisExtent: 100,
+        ),
+        itemBuilder: (context, index) {
+          return Container(
+            color: arrColors[index],
+          );
+        },
+        itemCount: arrColors.length,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
