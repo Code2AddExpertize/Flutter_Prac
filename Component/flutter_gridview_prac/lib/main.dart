@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //     return Container(color: arrColors[index],);
           // },itemCount: arrColors.length,),
           GridView.builder(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 100,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
