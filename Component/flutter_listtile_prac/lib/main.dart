@@ -52,20 +52,27 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(itemBuilder: (context, index) {
-        return ListTile(
-          leading: Text('${index+1}'),
-          title: Text(arrNames[index]),
-          subtitle: Text('Number'),
-          trailing: Icon(Icons.add),
-        );
-      }, separatorBuilder: (context,index){
-          return Divider(height: 100,thickness: 1,);
-      }, itemCount: arrNames.length),
+      body: ListView.separated(
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Text('${index + 1}'),
+              title: Text(arrNames[index]),
+              subtitle: Text('Number'),
+              trailing: Icon(Icons.add),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider(
+              height: 100,
+              thickness: 1,
+            );
+          },
+          itemCount: arrNames.length),
       floatingActionButton: FloatingActionButton(
-      onPressed: _incrementCounter,
-      tooltip: 'Increment',
-      child: const Icon(Icons.add),
-    ),);
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
