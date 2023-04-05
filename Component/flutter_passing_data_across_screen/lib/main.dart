@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_passing_data_across_screen/my_profile_screen.dart';
+import 'package:flutter_passing_data_across_screen/splash_sreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
     );
   }
 }
@@ -31,6 +34,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  var nameController = TextEditingController();
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -39,35 +44,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var arrNames = [
-      'Raman',
-      'Ramnaujan',
-      'Rajesh',
-      'James',
-      'John',
-      'Rahim',
-      'Ram'
-    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text('${index + 1}'),
-              title: Text(arrNames[index]),
-              subtitle: Text('Number'),
-              trailing: Icon(Icons.add),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 100,
-              thickness: 1,
-            );
-          },
-          itemCount: arrNames.length),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'Dashboard Screen',
+            ),
+            TextField(
+              controller: nameController,
+            ),
+            SizedBox(
+              height: 11,
+            ),
+            ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen(nameController.text.toString())));
+            }, child: Text('Press')),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',

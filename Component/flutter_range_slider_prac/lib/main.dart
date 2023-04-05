@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,6 +32,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  RangeValues values = RangeValues(0, 100);
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -39,35 +42,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var arrNames = [
-      'Raman',
-      'Ramnaujan',
-      'Rajesh',
-      'James',
-      'John',
-      'Rahim',
-      'Ram'
-    ];
+    RangeLabels labels =
+        new RangeLabels(values.start.toString(), values.end.toString());
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text('${index + 1}'),
-              title: Text(arrNames[index]),
-              subtitle: Text('Number'),
-              trailing: Icon(Icons.add),
-            );
+      body: Center(
+        child: RangeSlider(
+          max: 100,
+          min: 0,
+          activeColor: Colors.green,
+          inactiveColor: Colors.green.shade50,
+          onChanged: (newValue) {
+            values = newValue;
+            print('${newValue.start},${newValue.end}');
+            setState(() {});
           },
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 100,
-              thickness: 1,
-            );
-          },
-          itemCount: arrNames.length),
+          values: values,
+          labels: labels,
+          divisions: 10,
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',

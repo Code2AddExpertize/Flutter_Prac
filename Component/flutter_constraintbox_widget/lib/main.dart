@@ -39,35 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var arrNames = [
-      'Raman',
-      'Ramnaujan',
-      'Rajesh',
-      'James',
-      'John',
-      'Rahim',
-      'Ram'
-    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text('${index + 1}'),
-              title: Text(arrNames[index]),
-              subtitle: Text('Number'),
-              trailing: Icon(Icons.add),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 100,
-              thickness: 1,
-            );
-          },
-          itemCount: arrNames.length),
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 200,
+          maxHeight: 100
+        ),
+        child: Text('Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World  Hello World Hello World Hello World Hello World ',style: TextStyle(fontSize: 21,overflow: TextOverflow.fade,backgroundColor: Colors.amber)),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
