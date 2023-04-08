@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_opacity_animation/anim_utils.dart';
+import 'package:flutter_opacity_animation/colors_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,35 +31,52 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  var myOpacity =1.0;
+  var isVisible = true;
+  var randomAnim = RandomAnim.getRandomAnimation();
+  var textAnimName=RandomAnim.getAnimName();
+  var textColorName=ColorList.getRandomColorName(ColorList.colorListString);
+  var mColor = ColorList.getRandomColor(ColorList.colorList);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          AnimatedOpacity(opacity: 1, duration: Duration(seconds: 2),
-          child: Container(
-            width: 200,
-            height: 100,
-            color: Colors.blue ,
-          ),)
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            AnimatedOpacity(opacity: myOpacity, duration: Duration(seconds: 5),
+            curve: randomAnim,
+            child: Container(
+              width: 200,
+              height: 100,
+              color: mColor ,
+            ),),
+            ElevatedButton(onPressed: (){
+              setState(() {
+                if(isVisible) {
+                  myOpacity = 0.0;
+                  isVisible = false;
+                  randomAnim = RandomAnim.getRandomAnimation();
+                  textAnimName=RandomAnim.getAnimName();
+                  textColorName=ColorList.getRandomColorName(ColorList.colorListString);
+                  mColor = ColorList.getRandomColor(ColorList.colorList);
+                }else{
+                  myOpacity = 1.0;
+                  isVisible = true;
+                  randomAnim = RandomAnim.getRandomAnimation();
+                  textAnimName=RandomAnim.getAnimName();
+                  textColorName=ColorList.getRandomColorName(ColorList.colorListString);
+                  mColor = ColorList.getRandomColor(ColorList.colorList);
+                }
+              });
+            }, child: Text('Close')),
+            Text("Anim:${textAnimName}"),
+            Text("Color:${textColorName}"),
+          ],
+        ),
       ),
     );
   }
