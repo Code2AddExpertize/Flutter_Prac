@@ -42,3 +42,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/Users/ashishkumarsingh/LearningProjects/Flutter_Prac/Flutter_Prac/Component/flutter_foo_animation/lib/random_anim.dart
