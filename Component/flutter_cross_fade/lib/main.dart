@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_cross_fade/anim_utils.dart';
 import 'package:flutter_cross_fade/colors_list.dart';
+import 'package:flutter_cross_fade/text_utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final sizedCurve = RandomAnim();
   var sizeCurveAnim;
   var sizeCurveAnimName;
+  var textUtils = TextUtils();
 
   //First Child Properties
   final frstChldColorList = ColorList();
@@ -94,69 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {}
 
-  Widget textRenderWdgt(
-      {required Color chldColor,
-      required String label,
-      required String colorName}) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Flexible(
-            child: RichText(
-                text: TextSpan(
-                    style: TextStyle(
-                        color: chldColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                    children: <TextSpan>[
-                  TextSpan(
-                    text: label,
-                  ),
-                  TextSpan(
-                      text: colorName,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: gColorList.colorblackList[0],
-                        fontWeight: FontWeight.bold,
-                      )),
-                ])),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget animRenderWdgt({required String label, required String animName}) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          RichText(
-              text: TextSpan(
-                  style: TextStyle(
-                      color: gColorList.colorblackList[0],
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
-                  children: <TextSpan>[
-                TextSpan(
-                  text: label,
-                ),
-                TextSpan(
-                    text: animName,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: gColorList.colorblackList[1],
-                      fontWeight: FontWeight.normal,
-                    )),
-              ]))
-        ],
-      ),
-    );
-  }
-
   void reload() {
     setState(() {
       if (isFirst) {
@@ -177,31 +114,38 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            textRenderWdgt(
-                chldColor: frstChldColor,
+            textUtils.textKeyValueWdgt(
+                titleColor: frstChldColor,
                 label: 'First Child Color:      ',
-                colorName: frstChldColorName),
+                textValue: frstChldColorName),
             SizedBox(
               height: 11,
             ),
-            textRenderWdgt(
-                chldColor: secChldColor,
+            textUtils.textKeyValueWdgt(
+                titleColor: secChldColor,
                 label: 'Second Child Color: ',
-                colorName: secChldColorName),
+                textValue: secChldColorName),
             SizedBox(
               height: 11,
             ),
-            animRenderWdgt(
-                label: "Size Curve Anim: ", animName: sizeCurveAnimName),
+            textUtils.textKeyValueWdgt(
+                label: "Size Curve Anim: ",
+                textValue: sizeCurveAnimName,
+                childColor: Colors.black45),
             SizedBox(
               height: 11,
             ),
-            animRenderWdgt(
-                label: "First Curve Anim: ", animName: frstCurveAnimName),
+            textUtils.textKeyValueWdgt(
+                label: "First Curve Anim: ",
+                textValue: frstCurveAnimName,
+                childColor: Colors.black45),
             SizedBox(
               height: 11,
             ),
-            animRenderWdgt(label: "Sec Curve Anim:  ", animName: secCurveAnimName),
+            textUtils.textKeyValueWdgt(
+                label: "Sec Curve Anim:  ",
+                textValue: secCurveAnimName,
+                childColor: Colors.black45),
             SizedBox(
               height: 11,
             ),
