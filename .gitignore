@@ -43,8 +43,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-
-
 #files to ignore
 **/lib/random_anim.dart
 **/lib/colors_list.dart
@@ -52,3 +50,8 @@ app.*.map.json
 **/lib/colors_list_static.dart
 **/lib/anim_utils_static.dart
 **/lib/text_utils.dart
+
+*/Component/
+Component/
+*/.DS_Store
+.DS_Store
