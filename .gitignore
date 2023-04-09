@@ -53,3 +53,4 @@ app.*.map.json
 **/lib/anim_utils_static.dart
 **/lib/text_utils.dart
 **/assets/images/
+*/Flutter_Demo/
