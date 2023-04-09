@@ -45,3 +45,4 @@ app.*.map.json
 */Component/
 Component/
 */.DS_Store
+.DS_Store
