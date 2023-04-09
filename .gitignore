@@ -49,3 +49,5 @@ app.*.map.json
 **/lib/random_anim.dart
 **/lib/colors_list.dart
 **/lib/anim_utils.dart
+**/lib/colors_list_static.dart
+**/lib/anim_utils_static.dart
