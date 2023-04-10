@@ -54,3 +54,4 @@ app.*.map.json
 **/assets/images/
 */Flutter_Demo/*
 
+*/gradient_util.dart
