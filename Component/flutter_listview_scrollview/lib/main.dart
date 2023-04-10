@@ -30,7 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var list = [1, 2, 3, 4];
   var colorList = ColorList();
 
   @override
