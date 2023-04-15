@@ -51,6 +51,8 @@ app.*.map.json
 **/lib/anim_utils_static.dart
 **/lib/text_utils.dart
 **/lib/StringUtils.dart
+**/lib/material/material_colors.dart
+**/lib/material/material_color_list.dart
 
 **/assets/images/
 */Flutter_Demo/*
