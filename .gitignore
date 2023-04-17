@@ -56,6 +56,7 @@ app.*.map.json
 
 **/assets/images/
 #DS_Store 
+**/.DS_Store
 ../.DS_Store
 **/*.DS_Store
 **/lib/gradient_util.dart
