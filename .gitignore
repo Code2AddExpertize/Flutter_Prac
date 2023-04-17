@@ -56,5 +56,4 @@ app.*.map.json
 
 **/assets/images/
 
-
 **/lib/gradient_util.dart
