@@ -55,5 +55,5 @@ app.*.map.json
 **/lib/material/material_color_list.dart
 
 **/assets/images/
-
+.DS_Store
 **/lib/gradient_util.dart
