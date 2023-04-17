@@ -50,8 +50,11 @@ app.*.map.json
 **/lib/colors_list_static.dart
 **/lib/anim_utils_static.dart
 **/lib/text_utils.dart
+**/lib/StringUtils.dart
+**/lib/material/material_colors.dart
+**/lib/material/material_color_list.dart
 
-*/Component/
-Component/
-*/.DS_Store
-.DS_Store
+**/assets/images/
+**/Component/
+
+**/lib/gradient_util.dart
